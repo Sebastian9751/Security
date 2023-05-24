@@ -1,1 +1,39 @@
 # Hello
+
+#  ssh banditN@bandit.labs.overthewire.org -p 2220
+
+## Level 0-1 
+    $ cat README
+
+## Level 1-2 
+    $ cat /-
+    key: rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+
+## Level 2-3
+
+    $ cat spaces\ in\ this\ filename
+    key: aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+
+## Level 3-4
+
+    key: 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+
+## Level 4-5
+    $ cat ./-file07
+    key: lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+
+## Level 5-6
+
+    $ find inhere/ -type f -size 1033c
+
+    $ cd inhere/maybehere07/ && cat .file2
+
+    key: P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+
+## Level 6-7
+    $ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+
+    $ cd /var/lib/dpkg/info/ && cat bandit7.password
+    
+     key: z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+
