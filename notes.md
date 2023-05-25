@@ -73,8 +73,72 @@
     key: JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
 
 ## Level 12-13
-
-
+#### The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
+    $ mkdir /tmp/yo
+    $ cp data.txt  /tmp/yo
+    $ cd /tmp/yo
+    $ /tmp/yo$ ls
+    data  data.txt
+    $ /tmp/yo$ file dta
+    dta: cannot open `dta' (No such file or directory)
+    $ /tmp/yo$
+    $ /tmp/yo$ file data
+    data: bzip2 compressed data, block size = 900k
+    $ /tmp/yo$ mv data data3.bz
+    $ /tmp/yo$ bzip2 -d data3.bz
+    $ /tmp/yo$ ls
+    data3  data.txt
+    $ /tmp/yo$ file data 3
+    data: cannot open `data' (No such file or directory)
+    3:    cannot open `3' (No such file or directory)
+    $ /tmp/yo$
+    $ /tmp/yo$ file data3
+    data3: gzip compressed data, was "data4.bin", last modified: Sun Apr 23 18:04:23 2023, max compression, from Unix, original size modulo 2^32 20480
+    $ /tmp/yo$ mv data3 data4.gz
+    $ /tmp/yo$ ls
+    data4.gz  data.txt
+    $ /tmp/yo$ gzip -d data4.gz
+    $ /tmp/yo$ ls
+    data4  data.txt
+    $ /tmp/yo$ file data4
+    data4: POSIX tar archive (GNU)
+    $ /tmp/yo$ mv data4 data5.tar
+    $ /tmp/yo$ tar -xf data5.tar
+    $ /tmp/yo$ ls
+    data5.bin  data5.tar  data.txt
+    $ /tmp/yo$ file data5.bin
+    data5.bin: POSIX tar archive (GNU)
+    $ /tmp/yo$ mv data5.bin data6.tar
+    $ /tmp/yo$ tar -xf data6.tar
+    $ /tmp/yo$ ls
+    data5.tar  data6.bin  data6.tar  data.txt
+    $ /tmp/yo$ ls
+    data5.tar  data6.bin  data6.tar  data.txt
+    $ /tmp/yo$ file data6.bin
+    data6.bin: bzip2 compressed data, block size = 900k
+    $ /tmp/yo$ mv data6.bin data7.bz
+    $ /tmp/yo$ bzip2 -d data7.bz
+    $ /tmp/yo$ ls
+    data5.tar  data6.tar  data7  data.txt
+    $ /tmp/yo$ file data7
+    data7: POSIX tar archive (GNU)
+    $ /tmp/yo$ mv data7 data8.tar
+    $ /tmp/yo$ tar -xf data8.tar
+    $ /tmp/yo$ ls
+    data5.tar  data6.tar  data8.bin  data8.tar  data.txt
+    $ /tmp/yo$ file data8.bin
+    data8.bin: gzip compressed data, was "data9.bin", last modified: Sun Apr 23 18:04:23 2023, max compression, from Unix, original size modulo 2^32 49
+    $ /tmp/yo$ mv data8.bin data9.gz
+    $ /tmp/yo$ gzip -d data9.gz
+    $ /tmp/yo$ ls
+    data5.tar  data6.tar  data8.tar  data9  data.txt
+    $ /tmp/yo$ file data9
+    data9: ASCII text
+    $ /tmp/yo$ cat data9
+    The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
+    $ /tmp/yo$
+## Level 13-14
+    
 
 
 
