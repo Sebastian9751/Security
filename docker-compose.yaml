@@ -1,6 +1,6 @@
 version: '3.8'
 services:
   juice-shop:
-    image: chucknelson01/juiceshop:423
+    image: "bkimminich/juice-shop"
     ports:
       - 7000:3000
