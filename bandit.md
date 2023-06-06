@@ -246,3 +246,11 @@
     Password matches, sending next password
 
     key:  NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+    
+    
+#### Terminal 1
+![image](https://github.com/Sebastian9751/InformationSecurity/assets/85807291/3ed44c12-a700-4fe4-93a0-4960d0445467)
+#### Terminal 0
+![image](https://github.com/Sebastian9751/InformationSecurity/assets/85807291/9e4f0780-0500-4d62-aba9-39128da5f930)
+
+
