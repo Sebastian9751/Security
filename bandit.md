@@ -179,5 +179,70 @@
     Correct!
     key : jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
 
-## Level 15-16
+### Level 15-16
 
+    $ openssl s_client -connect localhost:30001
+
+    read R BLOCK
+    jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+    Correct!
+    key : JQttfApK4SeyHwDlI9SXGR50qclOAil1
+
+### Level 16-17 
+    $ nmap -p 31000-32000 localhost
+    $ openssl s_client -connect localhost:31790
+     ssh.key
+     touch pvt.key  
+     paste ssh.key into pvt.key
+     $ chmod 600 pvt.key
+     $ ls -l pvt.key
+     -rw------- 1
+     $ ssh -p 2220 bandit17@localhost -i pv.key
+
+
+### Level 17-18
+    $ diff passwords.old passwords.new
+    42c42
+    < glZreTEH1V3cGKL6g4conYqZqaEj0mte
+    ---
+    > hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+    key:  hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+
+### Level 18-19
+
+    $ ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
+    bandit18@bandit.labs.overthewire.org's password: 
+    key : awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+
+### Level 19-20
+
+   $ ./bandit20-do
+      Run a command as another user.
+      Example: ./bandit20-do id
+   $ ./bandit20-do  id
+      uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
+   $ ./bandit20-do  whoami
+     bandit20
+   $ ./bandit20-do  cat /etc/bandit_pass/bandit20
+    key: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+
+### Level 20-21
+#### Terminal 0:
+     $ nc -lvp 9999
+     Listening on 0.0.0.0 9999
+#### Terminal 1:
+     $ ./suconnect 9999
+
+#### Terminal 0
+
+    Connection received on localhost 39910
+    $ VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+    NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+
+#### Terminal 1:
+    $ ./suconnect 9999
+    Read: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
+    Password matches, sending next password
+
+    key:  NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
