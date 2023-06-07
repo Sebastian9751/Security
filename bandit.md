@@ -250,18 +250,11 @@
     Password matches, sending next password
 
     key:  NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+    
+    
+#### Terminal 1
+![image](https://github.com/Sebastian9751/InformationSecurity/assets/85807291/3ed44c12-a700-4fe4-93a0-4960d0445467)
+#### Terminal 0
+![image](https://github.com/Sebastian9751/InformationSecurity/assets/85807291/9e4f0780-0500-4d62-aba9-39128da5f930)
 
-### Level 21-22
-    $ $ cd /etc/cron.d/
-    $ cat cronjob_bandit22
-    @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
-    * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
 
-    $ cat /usr/bin/cronjob_bandit22.sh
-    #!/bin/bash
-    chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-    cat /etc/bandit_pass/bandit22 > /tmp/
-    t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-
-    $ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
-    key: WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
