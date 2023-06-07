@@ -228,10 +228,13 @@
     key: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
 
 ### Level 20-21
-#### Terminal 0:
+
+#### Terminal 0
+
      $ nc -lvp 9999
      Listening on 0.0.0.0 9999
-#### Terminal 1:
+#### Terminal 1
+
      $ ./suconnect 9999
 
 #### Terminal 0
@@ -240,9 +243,25 @@
     $ VxCazJaVykI6W36BkBU0mJTCM8rR95XT
     NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
 
-#### Terminal 1:
+#### Terminal 1
+
     $ ./suconnect 9999
     Read: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
     Password matches, sending next password
 
     key:  NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
+
+### Level 21-22
+    $ $ cd /etc/cron.d/
+    $ cat cronjob_bandit22
+    @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+    * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+
+    $ cat /usr/bin/cronjob_bandit22.sh
+    #!/bin/bash
+    chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+    cat /etc/bandit_pass/bandit22 > /tmp/
+    t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+
+    $ cat /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+    key: WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
