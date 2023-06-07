@@ -177,7 +177,7 @@
     $ nc localhost 30000
     fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
     Correct!
-    key : jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+    key: jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
 
 ### Level 15-16
 
@@ -186,7 +186,7 @@
     read R BLOCK
     jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
     Correct!
-    key : JQttfApK4SeyHwDlI9SXGR50qclOAil1
+    key: JQttfApK4SeyHwDlI9SXGR50qclOAil1
 
 ### Level 16-17 
     $ nmap -p 31000-32000 localhost
@@ -207,24 +207,28 @@
     ---
     > hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
 
-    key:  hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
+    key: hga5tuuCLF6fFzUpnagiMN8ssu9LFrdg
 
 ### Level 18-19
 
     $ ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
     bandit18@bandit.labs.overthewire.org's password: 
-    key : awhqfNnAbc1naukrpqDYcF95h7HoMTrC
+    key: awhqfNnAbc1naukrpqDYcF95h7HoMTrC
 
 ### Level 19-20
 
    $ ./bandit20-do
       Run a command as another user.
       Example: ./bandit20-do id
+### 
    $ ./bandit20-do  id
       uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
+### 
    $ ./bandit20-do  whoami
      bandit20
+### 
    $ ./bandit20-do  cat /etc/bandit_pass/bandit20
+### 
     key: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
 
 ### Level 20-21
