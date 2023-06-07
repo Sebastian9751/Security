@@ -1,7 +1,6 @@
 # Bandit
 
-  *ssh banditN@bandit.labs.overthewire.org -p 2220*
-
+_ssh banditN@bandit.labs.overthewire.org -p 2220_
 
 ### The password for the next level is stored in a file called - located in the home directory
 
@@ -52,7 +51,7 @@
 - owned by group bandit6
 - 33 bytes in size
 
-# 
+#
 
     $ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
     $ cd /var/lib/dpkg/info/ && cat bandit7.password
@@ -188,19 +187,20 @@
     Correct!
     key: JQttfApK4SeyHwDlI9SXGR50qclOAil1
 
-### Level 16-17 
+### Level 16-17
+
     $ nmap -p 31000-32000 localhost
     $ openssl s_client -connect localhost:31790
      ssh.key
-     touch pvt.key  
+     touch pvt.key
      paste ssh.key into pvt.key
      $ chmod 600 pvt.key
      $ ls -l pvt.key
      -rw------- 1
      $ ssh -p 2220 bandit17@localhost -i pv.key
 
-
 ### Level 17-18
+
     $ diff passwords.old passwords.new
     42c42
     < glZreTEH1V3cGKL6g4conYqZqaEj0mte
@@ -212,23 +212,31 @@
 ### Level 18-19
 
     $ ssh bandit18@bandit.labs.overthewire.org -p 2220 cat readme
-    bandit18@bandit.labs.overthewire.org's password: 
+    bandit18@bandit.labs.overthewire.org's password:
     key: awhqfNnAbc1naukrpqDYcF95h7HoMTrC
 
 ### Level 19-20
 
-   $ ./bandit20-do
-      Run a command as another user.
-      Example: ./bandit20-do id
-### 
-   $ ./bandit20-do  id
-      uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
-### 
-   $ ./bandit20-do  whoami
-     bandit20
-### 
-   $ ./bandit20-do  cat /etc/bandit_pass/bandit20
-### 
+$ ./bandit20-do
+Run a command as another user.
+Example: ./bandit20-do id
+
+###
+
+$ ./bandit20-do id
+uid=11019(bandit19) gid=11019(bandit19) euid=11020(bandit20) groups=11019(bandit19)
+
+###
+
+$ ./bandit20-do whoami
+bandit20
+
+###
+
+$ ./bandit20-do cat /etc/bandit_pass/bandit20
+
+###
+
     key: VxCazJaVykI6W36BkBU0mJTCM8rR95XT
 
 ### Level 20-21
@@ -237,6 +245,7 @@
 
      $ nc -lvp 9999
      Listening on 0.0.0.0 9999
+
 #### Terminal 1
 
      $ ./suconnect 9999
@@ -254,11 +263,29 @@
     Password matches, sending next password
 
     key:  NvEJF7oVjkddltPSrdKEFOllh9V1IBcq
-    
-    
+
 #### Terminal 1
+
 ![image](https://github.com/Sebastian9751/InformationSecurity/assets/85807291/3ed44c12-a700-4fe4-93a0-4960d0445467)
+
 #### Terminal 0
+
 ![image](https://github.com/Sebastian9751/InformationSecurity/assets/85807291/9e4f0780-0500-4d62-aba9-39128da5f930)
 
+### Level 21-22
+#### $ cd /etc/cron.d
+#### $ ls
+    cronjob_bandit15_root  cronjob_bandit22  cronjob_bandit24   e2scrub_all  sysstat
+    cronjob_bandit17_root  cronjob_bandit23  cronjob_bandit25_root  otw-tmp-dir
 
+####  $ cat cronjob_bandit22
+        @reboot bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+        * * * * * bandit22 /usr/bin/cronjob_bandit22.sh &> /dev/null
+#### $ cat /usr/bin/cronjob_bandit22.sh
+        #!/bin/bash
+        chmod 644 /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+        cat /etc/bandit_pass/bandit22 > /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+####  $ cat  /tmp/t7O6lds9S0RqQh9aMcz6ShpAoZKF7fgv
+    key: WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
+
+### Level 22-23
