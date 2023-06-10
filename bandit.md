@@ -319,7 +319,7 @@ $ ./bandit20-do cat /etc/bandit_pass/bandit20
 
     key: VAfGXJ1PBSsPSnvsjI8p759leLZ9GGar
 
-### Level 25-26
+### Level 24-25
 
     $ mkdir /tmp/sebas
     $ cd /tmp/sebas
@@ -343,5 +343,18 @@ Wrong! Please enter the correct pincode. Try again.
 Correct!
 The password of user bandit25 is p7TaowMYrmu23Ol8hiZh9UvD0O9hpx8d
 ```
+### Level 25-26
+```bash
 
-  
+$ ssh -t -i bandit26.sshkey bandit26@localhost -p 2220 /bin/sh
+: set shell = /bin/bash
+bandit26@bandit:~$
+
+```
+### Level 26-27
+
+```bash
+$ ./bandit27-do  cat /etc/bandit_pass/bandit27
+key : YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS
+```
+### Level 27-28
