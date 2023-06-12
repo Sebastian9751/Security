@@ -367,3 +367,31 @@ The password to the next level is: AVanL161y9rsbcJIsFHuw35rjaOM19nR
 ```
 
 ### Level 28-29
+```bash
+$ git log --graph
+* commit abcff758fa6343a0d002a1c0add1ad8c71b88534 (HEAD)
+| Author: Morla Porla <morla@overthewire.org>
+| Date:   Sun Apr 23 18:04:39 2023 +0000
+|
+|     add missing data
+|
+* commit c0a8c3cf093fba65f4ee0e1fe2a530b799508c78
+  Author: Ben Dover <noone@overthewire.org>
+  Date:   Sun Apr 23 18:04:39 2023 +0000
+
+      initial commit of README.md
+```
+```bash
+$ git checkout -f abcff758fa6343a0d002a1c0add1ad8c71b88534
+Previous HEAD position was c0a8c3c initial commit of README.md
+HEAD is now at abcff75 add missing data
+
+$ cat README.md
+# Bandit Notes
+Some notes for level29 of bandit.
+
+## credentials
+
+- username: bandit29
+- password: tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S
+```
