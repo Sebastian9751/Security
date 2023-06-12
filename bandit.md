@@ -358,3 +358,12 @@ $ ./bandit27-do  cat /etc/bandit_pass/bandit27
 key : YnQpBuifNMas1hcUFk70ZmqkhUU2EuaS
 ```
 ### Level 27-28
+```bash
+$ mkdir /tmp/seb
+$ cd /tmp/seb
+$ git clone ssh://bandit27-git@localhost/home/bandit27-git/repo
+$ cat repo/README
+The password to the next level is: AVanL161y9rsbcJIsFHuw35rjaOM19nR
+```
+
+### Level 28-29
