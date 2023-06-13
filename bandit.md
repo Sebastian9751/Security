@@ -395,3 +395,33 @@ Some notes for level29 of bandit.
 - username: bandit29
 - password: tQKvmcwNYcFS6vmPHIUSI3ShmsrQZK8S
 ```
+
+### Level 29-30
+
+```bash
+$ mkdir /tmp/sebas2
+$ cd /tmp/sebas2
+$ git clone ssh://bandit29-git@localhost:2220/home/bandit29-git/repo
+$ cd repo && git branch -r
+
+  origin/HEAD -> origin/master
+  origin/dev
+  origin/master
+  origin/sploits-dev
+  
+$ git checkout dev
+Branch 'dev' set up to track remote branch 'dev' from 'origin'.
+Switched to a new branch 'dev'
+$ git branch
+* dev
+  master
+$ cat README.md
+# Bandit Notes
+Some notes for bandit30 of bandit.
+
+## credentials
+
+- username: bandit30
+- password: xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS
+
+```
