@@ -1,7 +1,4 @@
 # Bandit
-
-_ssh banditN@bandit.labs.overthewire.org -p 2220_
-
 ### The password for the next level is stored in a file called - located in the home directory
 
 ```bash   
