@@ -408,13 +408,15 @@ $ cd repo && git branch -r
   origin/dev
   origin/master
   origin/sploits-dev
-  
+
 $ git checkout dev
 Branch 'dev' set up to track remote branch 'dev' from 'origin'.
 Switched to a new branch 'dev'
+
 $ git branch
 * dev
   master
+
 $ cat README.md
 # Bandit Notes
 Some notes for bandit30 of bandit.
@@ -425,3 +427,63 @@ Some notes for bandit30 of bandit.
 - password: xbhV3HpNGlTIdnjUrdAlPzc2L6y9EOnS
 
 ```
+
+### Level 30-31
+
+```bash
+$ git clone ssh://bandit30-git@localhost:2220/home/bandit30-git/repo
+$ git tag
+ secret
+
+$ git show secret
+ OoffzGDlzhAlerFJ2cAiz1D41JW1Mhmt
+```
+### Level 31-32
+```bash
+$ cat .gitignore
+*.txt
+$ rm .gitignore
+$ echo "May I come in?" > key.txt
+$ git add key.txt
+$ git commit  -m 'added key.txt'
+$ git push
+
+
+bandit31-git@localhost's password:
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 325 bytes | 325.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote: ### Attempting to validate files... ####
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+remote: Well done! Here is the password for the next level:
+remote: rmCBvG56y58BXzv98yZGdO7ATVL5dW8y
+remote:
+remote: .oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.oOo.
+remote:
+```
+
+### Level 32-33
+```bash
+>> $SHELL
+WELCOME TO THE UPPERCASE SHELL
+>> $0
+$ export SHELL=/bin/bash
+$ echo $SHELL
+/bin/bash
+$ $SHELL
+
+bandit33@bandit:~$
+
+$ cat /etc/bandit_pass/bandit33
+
+odHo63fHiFqcWWJG9rLiLDtPm45KzUKy
+```
+
+### Level 33-34
+
+*At this moment, level 34 does not exist yet.*
