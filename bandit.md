@@ -4,33 +4,42 @@ _ssh banditN@bandit.labs.overthewire.org -p 2220_
 
 ### The password for the next level is stored in a file called - located in the home directory
 
-    $ cat /-
-    key: rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+```bash   
+$ cat /-
+key: rRGizSaX8Mk1RTb1CNQoXTcYZWU6lgzi
+```
+    
 
 ## Level 2-3
-
+    
+```bash 
+$ cat spaces\ in\ this\ filename
+aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG  
+```
 ### The password for the next level is stored in a file called spaces in this filename located in the home directory
 
-    $ cat spaces\ in\ this\ filename
-    key: aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+```bash  
+$ cat spaces\ in\ this\ filename
+key: aBZ0W5EmUfAf7kHTQeOwd8bauFJ2lAiG
+ ```
 
+  
 ## Level 3-4
-
 ### The password for the next level is stored in a hidden file in the inhere directory.
 
-    $ ls -la
-    $cat .hidden
-    key: 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
-
+```bash  
+$ ls -la
+$cat .hidden
+key: 2EW7BBsr6aMMoJ2HjW067dm8EgX26xNe
+ ```
 ## Level 4-5
-
 ### The password for the next level is stored in the only human-readable file in the inhere directory. Tip: if your terminal is messed up, try the “reset” command.
-
-    $ cat ./-file07
-    key: lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
-
+```bash  
+$ cat ./-file07
+key: lrIWWI6bB37kxfiCQZqUdOIYfr6eEeqR
+ ```
+    
 ## Level 5-6
-
 ### The password for the next level is stored in a file somewhere under the inhere directory and has all of the following properties:
 
 - human-readable
@@ -39,9 +48,12 @@ _ssh banditN@bandit.labs.overthewire.org -p 2220_
 
 ### ->
 
-    $ find inhere/ -type f -size 1033c
-    $ cd inhere/maybehere07/ && cat .file2
-    key: P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU
+   
+
+```bash   $ find inhere/ -type f -size 1033c
+$ cd inhere/maybehere07/ && cat .file2
+key: P4L4vucdmLnm8I7Vl7jG1ApGSfjYKqJU 
+```
 
 ## Level 6-7
 
@@ -53,50 +65,64 @@ _ssh banditN@bandit.labs.overthewire.org -p 2220_
 
 #
 
-    $ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
-    $ cd /var/lib/dpkg/info/ && cat bandit7.password
-    key: z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+   
+
+```bash  
+
+$ find / -user bandit7 -group bandit6 -size 33c 2>/dev/null
+$ cd /var/lib/dpkg/info/ && cat bandit7.password
+key: z7WtoNQU2XfjmMtWA8u5rN4vzqu4v99S
+
+ ```
 
 ## Level 7-8
 
 ### The password for the next level is stored in the file data.txt next to the word millionth
 
-    $ grep -r millionth data.txt
-    key: TESKZC0XvTetK0S9xNwm25STk5iWrBvP
+```bash  
+$ grep -r millionth data.txt
+key: TESKZC0XvTetK0S9xNwm25STk5iWrBvP        
+```
 
 ## Level 8-9
-
 ### The password for the next level is stored in the file data.txt and is the only line of text that occurs only once
 
-    $ sort data.txt | uniq -u
-    key: EN632PlfYiZbn3PhVK3XOGSlNInNE00t
-
+    
+```bash      
+$ sort data.txt | uniq -u
+key: EN632PlfYiZbn3PhVK3XOGSlNInNE00t   
+```
 ## Level 9-10
-
 ### The password for the next level is stored in the file data.txt in one of the few human-readable strings, preceded by several ‘=’ characters.
 
-    $ grep -aoP '(=+)[[:print:]]+' data.txt | sed 's/=//'
-    key: G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s
-
+```bash  
+ $ grep -aoP '(=+)[[:print:]]+' data.txt | sed 's/=//'
+    key: G7w8LIi6J3kTb8A7j9LgrywtEUlyyp6s     
+```
 ## Level 10-11
-
 ### The password for the next level is stored in the file data.txt, which contains base64 encoded data
 
-    $ base64 --decode data.txt
-    key: 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM
-
+    
+```bash      
+$ base64 --decode data.txt
+key: 6zPeziLdR2RKNdNYFNb6nVCKzphlXHBM   
+```
 ## Level 11-12
-
 ### The password for the next level is stored in the file data.txt, where all lowercase (a-z) and uppercase (A-Z) letters have been rotated by 13 positions
 
-    $ tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt
-    key: JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv
+   
+```bash  
+$ tr 'A-Za-z' 'N-ZA-Mn-za-m' < data.txt
+key: JVNBBFSmZwKKOP0XbFXOoW8chDz5yVRv    
+    
+```
 
 ## Level 12-13
-
 ### The password for the next level is stored in the file data.txt, which is a hexdump of a file that has been repeatedly compressed. For this level it may be useful to create a directory under /tmp in which you can work using mkdir. For example: mkdir /tmp/myname123. Then copy the datafile using cp, and rename it using mv (read the manpages!)
 
-    $ mkdir /tmp/yo
+    
+```bash  
+$ mkdir /tmp/yo
     $ cp data.txt  /tmp/yo
     $ cd /tmp/yo
     $ /tmp/yo$ ls
@@ -158,46 +184,54 @@ _ssh banditN@bandit.labs.overthewire.org -p 2220_
     data9: ASCII text
     $ /tmp/yo$ cat data9
     The password is wbWdlBxEir4CaE8LaPhauuOo6pwRmrDw
-    $ /tmp/yo$
-
+    $ /tmp/yo$    
+    
+```
 ## Level 13-14
 
 ### The password for the next level is stored in /etc/bandit_pass/bandit14 and can only be read by user bandit14. For this level, you don’t get the next password, but you get a private SSH key that can be used to log into the next level. Note: localhost is a hostname that refers to the machine you are working on
 
-    $ cat sshkey.private
-    $ ssh -i sshkey.private  bandit14@localhost -p 2220
-    $ cat /etc/bandit_pass/bandit14
-    key: fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+  
+
+```bash
+$ cat sshkey.private
+$ ssh -i sshkey.private  bandit14@localhost -p 2220
+$ cat /etc/bandit_pass/bandit14
+key: fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+```
 
 ## Level 14-15
-
 ### The password for the next level can be retrieved by submitting the password of the current level to port 30000 on localhost.
 
-    $ nc localhost 30000
-    fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
-    Correct!
-    key: jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
-
+```bash
+ $ nc localhost 30000
+fGrHPx402xGC7U7rXKDaxiWFTOiF0ENq
+Correct!
+key: jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+```
 ### Level 15-16
-
-    $ openssl s_client -connect localhost:30001
-
-    read R BLOCK
-    jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
-    Correct!
-    key: JQttfApK4SeyHwDlI9SXGR50qclOAil1
-
+```bash
+$ openssl s_client -connect localhost:30001
+read R BLOCK
+jN2kgmIXJ6fShzhT2avhotn4Zcka6tnt
+Correct!
+key: JQttfApK4SeyHwDlI9SXGR50qclOAil1
+```
 ### Level 16-17
 
-    $ nmap -p 31000-32000 localhost
-    $ openssl s_client -connect localhost:31790
-     ssh.key
-     touch pvt.key
-     paste ssh.key into pvt.key
-     $ chmod 600 pvt.key
-     $ ls -l pvt.key
-     -rw------- 1
-     $ ssh -p 2220 bandit17@localhost -i pv.key
+   
+
+```bash
+$ nmap -p 31000-32000 localhost
+$ openssl s_client -connect localhost:31790
+ssh.key
+touch pvt.key
+paste ssh.key into pvt.key
+$ chmod 600 pvt.key
+$ ls -l pvt.key
+-rw------- 1
+$ ssh -p 2220 bandit17@localhost -i pv.key
+```
 
 ### Level 17-18
 
